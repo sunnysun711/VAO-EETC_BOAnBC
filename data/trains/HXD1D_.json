@@ -1,0 +1,115 @@
+{
+    "metadata": {
+        "id": "HXD1D",
+        "created by": "Yichen Sun",
+        "date": "2025-12-09",
+        "data_source": "《中华人民共和国铁道行业标准 TB/T 1407.1-2018 列车牵引计算 第1部分：机车牵引式列车》Railway train traction calculation--Part 1: Trains with locomotives",
+        "info_chinese": "HXD1D双机牵引1100吨，编组20辆，机车自重126吨，两台机车252吨",
+        "info_english": "Passenger train with two locomotives, 20 carriages with loading 1100t, two locomotives each weighted 126t."
+    },
+    "mass": {
+        "unit": "kg",
+        "value": 1352000.0
+    },
+    "rho": {
+        "unit": "%",
+        "value": 6.0
+    },
+    "max traction force": {
+        "unit": "kN",
+        "value": 827.3
+    },
+    "max traction power": {
+        "unit": "kW",
+        "value": 15373.689
+    },
+    "max traction constraint formula":[
+        {
+            "type": "linear",
+            "formula": "F <= k * v + b. F(kN). v(m/s)",
+            "params": [
+                { "k": -2.4072, "b": 830.64 },
+                { "k": -4.5684, "b": 836.65 },
+                { "k": -7.146,  "b": 850.97 },
+                { "k": -10.278, "b": 877.92 }
+            ]
+        },
+        {
+            "type": "inverse",
+            "formula": "F <= a / v + c. F(kN). v(m/s)",
+            "params": [
+                { "a": 4467.2, "c": 431.08 },
+                { "a": 6276.7, "c": 338.02 },
+                { "a": 8278.0, "c": 247.96 },
+                { "a": 10352,  "c": 164.98 },
+                { "a": 12348,  "c": 93.158 },
+                { "a": 15300,  "c": 0      }
+            ],
+            "a lighter version":[
+                { "a": 3531.9, "c": 485.13 },
+                { "a": 8677.1, "c": 225.03 },
+                { "a": 15300, "c": 0 }
+            ]
+        }
+    ],
+    "max pn braking force":{
+        "unit": "kN",
+        "value": 1000.0,
+        "info": "与速度相关，但在限速范围内总是比1000kN大，取1000kN。"
+    },
+    "max reg braking force": {
+        "unit": "kN",
+        "value": 420.0
+    },
+    "max reg braking power": {
+        "unit": "kW",
+        "value": 14535
+    },
+    "max braking constraint formula":[
+        {
+            "type": "inverse",
+            "formula": "F <= a / v + c. F(kN). v(m/s)",
+            "params": [
+                {
+                    "a": 14300,
+                    "c": 2.5211
+                }
+            ]
+        }
+    ],
+    "max deceleration": {
+        "unit": "m/s^2",
+        "value": 1.5
+    },
+    "max speed": {
+        "unit": "km/h",
+        "value": 160.0
+    },
+    "rolling resistance r0":{
+        "unit": "kN",
+        "value": 1.58576923
+    },
+    "rolling resistance r1": {
+        "unit": "kN/(km/h)",
+        "value": 0.00358993
+    },
+    "rolling resistance r2": {
+        "unit": "kN/(km/h)^2",
+        "value": 0.00020881
+    },
+    "tunnel resistance rtn":{
+        "unit": "kN/(km/h)^2",
+        "value": 0.0,
+        "info": "等价于坡道附加阻力，这里rtn取0，但需要额外增加一倍的坡道附加阻力"
+    },
+    "efficiency traction": {
+        "unit": "%",
+        "value": 87.5,
+        "info": "NOT VERIFIED."
+    },
+    "efficiency reg brake": {
+        "unit": "%",
+        "value": 70.0,
+        "info": "NOT VERIFIED."
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "metadata": {
+        "id": "CRH380AL",
+        "created by": "Yichen Sun",
+        "date": "2025-12-04",
+        "data_source": "《中华人民共和国铁道行业标准 TB/T 1407.2-202X 列车牵引计算 第2部分：动车组》Railway train traction calculation--Part 2: EMU",
+        "info_chinese": "车型CRH380AL, 编组14M2T, 定员1028人, 最高运行速度350km/h, 紧急制动最大减速度1.35m/s^2, 整车网端容量26985kVA, 最大起动牵引力520.0kN, 轮周功率19929kW, 恒功转折点速度155.0km/h, 电机持续运行速度270.0km/h, 辅助电源容量1040kVA, 定员质量903t.",
+        "info_english": "Train type: CRH380AL, 1028 passengers, max speed 350km/h, max deceleration 1.35m/s^2, max net power 26985kVA, max traction force 520.0kN, wheel power 19929kW, constant power turn point speed 155.0km/h, motor running speed 270.0km/h, auxiliary power capacity 1040kVA, passenger load mass 903t."
+    },
+    "mass": {
+        "unit": "kg",
+        "value": 903000.0
+    },
+    "rho": {
+        "unit": "%",
+        "value": 6.0
+    },
+    "max traction force": {
+        "unit": "kN",
+        "value": 520.0
+    },
+    "max traction power": {
+        "unit": "kW",
+        "value": 19418.1,
+        "info": "The value 19418.1 is derived from the curve table C.19 and figure E.19 in TB/T 1407.2-202X, which is not equal to the value 19929.0 in the table B.1."
+    },
+    "max traction constraint formula": [
+        {
+            "type": "linear",
+            "formula": "F <= k * v + b. F(kN). v(m/s)",
+            "params": [
+                {
+                    "k": -2.52,
+                    "b": 555.0
+                },
+                {
+                    "k": -6.6737,
+                    "b": 728.194
+                }
+            ]
+        },
+        {
+            "type": "inverse",
+            "formula": "F <= a / v + c. F(kN). v(m/s)",
+            "params": [
+                {
+                    "a": 19418.1,
+                    "c": 0.0
+                }
+            ]
+        }
+    ],
+    "max pn braking force": {
+        "unit": "kN",
+        "value": 637.97,
+        "info": "标准文件中，表D.19紧急UB减速度为0.7065m/s^2, pn_brake = 0.7065m/s^2 * 903t = 637.97kN."
+    },
+    "max reg braking force": {
+        "unit": "kN",
+        "value": 509.6
+    },
+    "max reg braking power": {
+        "unit": "kW",
+        "value": 33033.0,
+        "info": "This is not limiting braking power, because the braking curve is not strictly limited by power."
+    },
+    "max braking constraint formula": [
+        {
+            "type": "linear",
+            "formula": "F <= k * v + b. F(kN). v(m/s)",
+            "params": [
+                {
+                    "k": -1.787,
+                    "b": 544.34
+                }
+            ]
+        },
+        {
+            "type": "inverse",
+            "formula": "F <= a / v + c. F(kN). v(m/s)",
+            "params": [
+                {
+                    "a": 42942.9,
+                    "c": -121.0
+                },
+                {
+                    "a": 33033.0,
+                    "c": 0.0
+                }
+            ]
+        }
+    ],
+    "max deceleration": {
+        "unit": "m/s^2",
+        "value": 1.35
+    },
+    "max speed": {
+        "unit": "km/h",
+        "value": 270,
+        "info": "电机持续运行速度"
+    },
+    "rolling resistance r0": {
+        "unit": "kN",
+        "value": 3.3
+    },
+    "rolling resistance r1": {
+        "unit": "kN/(km/h)",
+        "value": 0.0469
+    },
+    "rolling resistance r2": {
+        "unit": "kN/(km/h)^2",
+        "value": 0.000921
+    },
+    "tunnel resistance rtn": {
+        "unit": "kN/(km/h)^2",
+        "value": 0.00042367,
+        "info": "Based on unit resistance w_s = 0.46 c v^2. used as wtn=rtn*v^2."
+    },
+    "efficiency traction": {
+        "unit": "%",
+        "value": 87.5,
+        "info": "NOT VERIFIED."
+    },
+    "efficiency reg brake": {
+        "unit": "%",
+        "value": 70.0,
+        "info": "NOT VERIFIED."
+    }
+}
