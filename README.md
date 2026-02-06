@@ -52,8 +52,8 @@ This repository contains the implementation code for the manuscript on energy-ef
 1. Clone this repository:
 
 ```bash
-git clone <repository-url>
-cd BOAnBC_github
+git clone https://github.com/sunnysun711/VAO-EETC_BOAnBC.git
+cd VAO-EETC_BOAnBC
 ```
 
 2. Install the required dependencies:
